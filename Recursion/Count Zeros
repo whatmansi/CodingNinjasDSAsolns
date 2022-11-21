@@ -1,0 +1,30 @@
+/* Given an integer N, count and return the number of zeros that are present in the given integer using recursion. */
+
+int countZeros(int n) {
+    // Write your code here
+    if(n<9){
+        if(n == 0)
+        return 1;
+        else return 0;
+    }
+
+    int count = 0;
+
+    int ld = n%10;
+    if(ld == 0)
+    count++;
+
+    int ans = countZeros(n/10);
+    return count + ans;
+}
+
+
+#include <iostream>
+#include "solution.h"
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    cout << countZeros(n) << endl;
+}
